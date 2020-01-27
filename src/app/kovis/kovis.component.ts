@@ -8,21 +8,27 @@ declare var angular: any;
   styleUrls: ['./kovis.component.css']
 })
 export class KovisComponent implements OnInit {
-  documents = []
+  documents;
 		
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
 	this.getLotDocuments()  
-	 // fetch('http://localhost:8580/alfresco')
+	 // fetch('http://localhost:8080/alfresco')
   }
   
-  getLotDocuments(){
-	var resp = this.http.get('http://localhost:8580/alfresco')
-	/*var ff = fetch('http://localhost:8580/alfresco')
-	ff.then( (doc) =>  alert(doc.Filename))
-	alert('ff ' + doc.Filename)*/
-	resp.forEach( doc => { alert(doc)})
+    getLotDocuments(){
+		
+	//this.http.get<any>('https://localhost:8080/alfresco')
+		console.log('yaaaa')
+	 fetch('http://localhost:8080/alfresco', {
+		
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Accept': 'application/json'
+		}})
+		.then(  res =>  res.json() )
+		.then(docs => alert(  JSON.stringify(docs[0])))
   }
   
 }
