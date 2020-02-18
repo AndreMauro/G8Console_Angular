@@ -1,0 +1,12 @@
+.flex-zone{
+  width: 100%;
+  padding: 3%;
+  display: flex;
+  font-size: medium;
+  font-weight: bold;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+}

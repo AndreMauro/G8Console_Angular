@@ -1,52 +1,22 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img
-    width="40"
-    src="./assets/G8logo.svg"
-  >
-  <span>Welcome to G8Console</span>
-    <div class="spacer"></div>
-	
-  <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://github.com/Tchessco" title="GitHub">
-  <img
-    width="40"
-    src="./assets/Octocat.png"
-	height="24"
-	data-name="Logo — FIXED"
-	viewBox="0 0 400 400"> 
-  </a>
+  <img src="../assets/home_90.png">
+  <span><h3>Bem Vindo ao OMNICHANNELS</h3></span>
+
 </div>
+<mat-tab-group>
+  <mat-tab label="SIT/INT" routerLink="/sit" routerLinkActive="active">
+    <app-sit></app-sit>
+  </mat-tab>
 
-<div class="content" role="main">
-  <!-- Resources -->
-  <h2>G8 - OMNICHANNEL</h2>
-  <p>Here are our apps:</p>
-<!--Apps-->
-  <div class="card-container">
-
-	<a class="card" routerLink="/Kovis" routerLinkActive="active">
-      <span>Kovis Metadata</span>
-
-      <svg class="material-icons"  width="24" height="24" viewBox="0 0 24 24">
-	  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-    </a>
-
-    <a class="card" routerLink="/Bem" routerLinkActive="active">
-      <span>Bem</span>
-
-      <svg class="material-icons"  width="24" height="24" viewBox="0 0 24 24">
-	  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    </a>
-    
-    <a class="card" routerLink="/MotorDeQuestionarios" routerLinkActive="active">
-      <span>Motor de questionários</span>
-
-      <svg class="material-icons" width="24" height="24" viewBox="0 0 24 24">
-	  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-    </a>
-
-  </div>
-<router-outlet></router-outlet>
+  <mat-tab label="UAT/PRE">
+    <app-uat></app-uat>
+  </mat-tab>
+  <mat-tab label="PRD/PROD">
+    <app-prd></app-prd>
+  </mat-tab>
+</mat-tab-group>
 <footer>
-  <p>Created on 2019!</p>
+  <p>BANKINTER</p>
+  <p>NOVABASE</p>
 </footer>
-</div>

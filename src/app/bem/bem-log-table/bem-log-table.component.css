@@ -1,0 +1,15 @@
+table{
+  max-width: content-box;
+  min-width: auto;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.full-width-table {
+  width: auto;
+}
+
+td {
+  width: 100%;
+}
+

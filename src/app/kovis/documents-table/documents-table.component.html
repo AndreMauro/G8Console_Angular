@@ -1,0 +1,50 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- filename-->
+    <!-- filename-->
+    <ng-container matColumnDef="fileName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Filename</th>
+      <td mat-cell *matCellDef="let row">{{row.filename}}</td>
+    </ng-container>
+  
+    <!-- AlfrescoID-->
+    <ng-container matColumnDef="alfrescoId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>AlfrescoID</th>
+      <td mat-cell *matCellDef="let row">{{row.AlfrescoID}}</td>
+    </ng-container>
+
+    <!-- RelatedZIP -->
+    <ng-container matColumnDef="relatedZIP">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>RelatedZIP</th>
+      <td mat-cell *matCellDef="let row">{{row.RelatedZIP}}</td>
+    </ng-container>
+
+     <!-- ORIGIN-->
+     <ng-container matColumnDef="origin">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ORIGIN</th>
+      <td mat-cell *matCellDef="let row">{{row.ORIGIN}}</td>
+     </ng-container>
+
+    <!-- AlfrescoValidationState -->
+     <ng-container matColumnDef="alfrescoValidationState">
+       <th mat-header-cell *matHeaderCellDef mat-sort-header >AlfrescoValidationState</th>
+       <td mat-cell *matCellDef="let row">{{row.AlfrescoValidationState}}</td>
+      </ng-container>
+
+    <!-- ResponseError -->
+    <ng-container matColumnDef="responseError">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header >ResponseError</th>
+      <td mat-cell *matCellDef="let row">{{row.ResponseError}}</td>
+     </ng-container>      
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>
