@@ -1,6 +1,6 @@
 <script type="text/javascript" src="https://www.turnjs.com/lib/turn.min.js "></script> 
 <p>kovis works!</p>
 <div>
-<button (click)="getLotDocuments()">Show Documents!</button>
-<documents-table></documents-table>
+<!--<button (click)="getLotDocuments()">Show Documents!</button>-->
+<documents-table *ngIf="showTable"></documents-table>
 </div>

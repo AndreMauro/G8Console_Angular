@@ -10,11 +10,10 @@ import {InterationService} from "../interation.service";
 
 export class KovisComponent implements OnInit {
   documents;
-		
   constructor(private alfrescoDocumentsService: InterationService) { }
-
+  showTable : boolean = false
   ngOnInit() {
-	//this.getLotDocuments()  
+	this.getLotDocuments()  
   }
   
   getLotDocuments(){
@@ -23,8 +22,11 @@ export class KovisComponent implements OnInit {
 		.then(docs => {
 			console.log(docs)
 			this.documents = docs
-			this.alfrescoDocumentsService.changeAlfrescoList(this.documents)
-		})
+      this.alfrescoDocumentsService.changeAlfrescoList(this.documents)
+      return docs
+    })
+
+    this.showTable =  (this.documents != null)
   }
   
 }

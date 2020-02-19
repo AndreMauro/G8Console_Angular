@@ -17,21 +17,18 @@ export class DocumentsTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable, {static: false}) table: MatTable<DocumentsTableItem>;
   dataSource: DocumentsTableDataSource;
 
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['fileName', 'alfrescoId' , 'relatedZIP' , 'origin', 'alfrescoValidationState', 'responseError']
  constructor(private alfrescoDocumentService : InterationService){
  }
 
   ngOnInit() {
-   // console.log("pasou info? " + this.kovisDocuments )
     this.dataSource = new DocumentsTableDataSource();
 
     this.alfrescoDocumentService.currentAlfrescoList.subscribe( docList => {
       
-      this.dataSource.data = JSON.parse(JSON.stringify(docList))
-      /*this.dataSource.data.forEach( doc =>{
-        doc.filename = __filename.split('\\')[6]
-      })*/
+      this.dataSource.data = JSON.parse(JSON.stringify(docList))      
       console.log('document List on subscribe',this.dataSource.data)
       })
   }
